@@ -1,6 +1,9 @@
 # WMUBot
 Bot per telegram che mostra le foto delle webcam delle mense UNITN
 https://telegram.me/wmubot
+## Esempio
+![alt tag](http://i.imgur.com/WxneQei.png?1)
+
 ## Webcam disponibili
 - /povo Webcam del Polo Ferrari (Mensa veloce e normale)
 - /mesiano Webcam ????
