@@ -177,7 +177,7 @@ class WebhookHandler(webapp2.RequestHandler):
                 reply("http://www.operauni.tn.it/servizi/ristorazione/calendario")
             elif '/help' in text:
                 reply(
-                    "/povo - Mostra le Webcam delle mense di Povo\n/mesiano - Mostra le Webcam delle mense di Mesiano\n/lettere - Mostra le Webcam della mensa in via Tommaso Gar\n/sito - Invia il link del sito del sito per ulteriori info(menu', calendario, ecc)\n/help - Mostra sta roba qui")
+                    "/povo - Mostra le Webcam delle mense di Povo\n/mesiano - Mostra le Webcam delle mense di Mesiano\n/lettere - Mostra le Webcam della mensa in via Tommaso Gar\n/sito - Invia il link del sito per ulteriori info (menu', calendario, ecc)\n/help - Mostra sta roba qui")
                 reply("Se pensi che ci sia qualcosa di rotto contatta @ilbonte e magari manda uno screen\n")
             elif '/nanno' in text:
                 file = StringIO.StringIO(
