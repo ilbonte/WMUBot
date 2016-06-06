@@ -1,3 +1,5 @@
+## Il bot è stato riscritto in JavaScript. Il nuovo sorgente verrà caricato appena possibile.
+
 # WMUBot
 Bot per telegram che mostra le foto delle webcam delle mense UNITN
 https://telegram.me/wmubot
