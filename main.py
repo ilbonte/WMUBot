@@ -143,7 +143,7 @@ class WebhookHandler(webapp2.RequestHandler):
             decimalTime = float(currentHour) + float(currentMin)
             strTime = str(decimalTime)
             if text == '/start':
-                reply('Bot abilitato. Usa /stop per disabilitarimi')
+                reply('Bot abilitato. Usa /stop per disabilitarmi')
                 setEnabled(chat_id, True)
             elif text == '/stop':
                 reply('Bot disabilitato. Usa /start per abilitarmi')
