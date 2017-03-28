@@ -31,9 +31,9 @@ function mensaIsOpen() {
     var now = new Date();
     var hour;
     if(now.dst()){
-       hour = now.getUTCHours() + 3;
+       hour = now.getUTCHours() + 2;
     }else{
-        hour = now.getUTCHours() + 2;
+        hour = now.getUTCHours() + 1;
     }
     var decimalMinutes = now.getUTCMinutes() / 100;
     var time = hour + decimalMinutes;
