@@ -29,7 +29,12 @@ var mense = {
 
 function mensaIsOpen() {
     var now = new Date();
-    var hour = now.getUTCHours() + 2;
+    var hour;
+    if(now.dst()){
+       hour = now.getUTCHours() + 3;
+    }else{
+        hour = now.getUTCHours() + 2;
+    }
     var decimalMinutes = now.getUTCMinutes() / 100;
     var time = hour + decimalMinutes;
     if (time > 11.44 && time < 14.30) {
@@ -94,3 +99,13 @@ bot.onText(/\/help/, function(msg, match) {
     bot.sendMessage(msg.from.id, '/povo - Mostra le Webcam delle mense di Povo\n/mesiano - Mostra le Webcam delle mense di Mesiano\n/lettere - Mostra le Webcam della mensa in via Tommaso Gar\n/sito - Invia il link del sito del sito per ulteriori info(menù, calendario, ecc)\n/help - Mostra sta roba qui');
     bot.sendMessage(msg.from.id, 'Se pensi che ci sia qualcosa di rotto contatta @ilbonte e magari manda uno screen\n');
 });
+
+Date.prototype.stdTimezoneOffset = function() {
+    var jan = new Date(this.getFullYear(), 0, 1);
+    var jul = new Date(this.getFullYear(), 6, 1);
+    return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+}
+
+Date.prototype.dst = function() {
+    return this.getTimezoneOffset() < this.stdTimezoneOffset();
+}
