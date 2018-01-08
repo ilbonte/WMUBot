@@ -75,7 +75,6 @@ function sendWebcam(bot, chatId, location, force) {
 }
 
 
-
 bot.onText(/\/povo/, function (msg, match) {
     sendWebcam(bot, msg.chat.id, 'povo');
 });
@@ -98,6 +97,7 @@ bot.onText(/\/sito/, function (msg, match) {
 bot.onText(/\/help/, function (msg, match) {
     bot.sendMessage(msg.from.id, '/povo - Mostra le Webcam delle mense di Povo\n/mesiano - Mostra le Webcam delle mense di Mesiano\n/lettere - Mostra le Webcam della mensa in via Tommaso Gar\n/sito - Invia il link del sito del sito per ulteriori info(menù, calendario, ecc)\n/help - Mostra sta roba qui');
     bot.sendMessage(msg.from.id, 'Se pensi che ci sia qualcosa di rotto contatta @ilbonte e magari manda uno screen\n');
+    bot.sendMessage(msg.from.id, '@WMUBot supports PASTO LESTO https://www.youtube.com/watch?v=g9nur8G-hKw');
 });
 
 Date.prototype.stdTimezoneOffset = function () {
@@ -109,3 +109,9 @@ Date.prototype.stdTimezoneOffset = function () {
 Date.prototype.dst = function () {
     return this.getTimezoneOffset() < this.stdTimezoneOffset();
 }
+
+// povo - Mostra le webcam delle mense di Povo
+// mesiano - Mostra le webcam delle mense di Mesiano
+// lettere - Mostra le webcam della mensa in via Tommaso Gar
+// sito - Invia il link del sito del sito per ulteriori info(menù, calendario, ecc)
+// help - Mostra cosa posso fare
