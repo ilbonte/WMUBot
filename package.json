@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [
-    "unitn"  
+    "unitn"
   ],
   "author": {
     "name": "ilbonte",
@@ -15,19 +15,19 @@
     "type": "git",
     "url": "https://github.com/ilbonte/WMUBot"
   },
-
   "engines": {
     "node": ">= 0.6.0",
     "npm": ">= 1.0.0"
   },
-
   "dependencies": {
     "express": "~3.4.4",
     "node-telegram-bot-api": "^0.21.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "moment": "^2.21.0",
+    "moment-timezone": "^0.5.14"
+  },
   "bundleDependencies": [],
-
   "private": true,
   "main": "server.js"
 }

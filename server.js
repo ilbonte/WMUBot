@@ -1,10 +1,9 @@
 var TelegramBot = require('node-telegram-bot-api');
+var moment = require('moment-timezone');
 var request = require('request').defaults({
     encoding: null
 });
 var token = process.env.TOKEN;
-
-
 
 // Setup polling way
 var bot = new TelegramBot(token, {
@@ -28,29 +27,21 @@ var mense = {
 };
 
 function mensaIsOpen() {
-    var now = new Date();
-    var hour;
-    if (now.dst()) {
-        hour = now.getUTCHours() + 2;
-    } else {
-        hour = now.getUTCHours() + 1;
-    }
-    var decimalMinutes = now.getUTCMinutes() / 100;
-    var time = hour + decimalMinutes;
-    if (time > 11.44 && time < 14.30) {
+    var now = moment().tz("Europe/Rome");
+    var openingTime = moment("1129", "Hmm").utcOffset(0, true);
+    var closingTime = moment("1431", "Hmm").utcOffset(0, true);
+    if (now.isBetween(openingTime, closingTime)) {
         return {
             result: true,
-            time: time
+            time: now.format("HH.mm")
         };
     } else {
         return {
             result: false,
-            time: time
+            time: now.format("HH.mm")
         };
     }
 }
-
-
 
 function sendWebcam(bot, chatId, location, force) {
     var checkMensa = mensaIsOpen();
@@ -99,16 +90,6 @@ bot.onText(/\/help/, function (msg, match) {
     bot.sendMessage(msg.from.id, 'Se pensi che ci sia qualcosa di rotto contatta @ilbonte e magari manda uno screen\n');
     bot.sendMessage(msg.from.id, '@WMUBot supports PASTO LESTO https://www.youtube.com/watch?v=g9nur8G-hKw');
 });
-
-Date.prototype.stdTimezoneOffset = function () {
-    var jan = new Date(this.getFullYear(), 0, 1);
-    var jul = new Date(this.getFullYear(), 6, 1);
-    return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-}
-
-Date.prototype.dst = function () {
-    return this.getTimezoneOffset() < this.stdTimezoneOffset();
-}
 
 // povo - Mostra le webcam delle mense di Povo
 // mesiano - Mostra le webcam delle mense di Mesiano
