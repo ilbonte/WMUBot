@@ -1,24 +1,25 @@
 {
-  "name": "WMUBOT",
+  "name": "WMUBot",
   "version": "1.0.0",
-  "description": "",
+  "description": "controlla la coda delle mense universitarie",
   "keywords": [
-    "unitn"
+    "unitn",
+    "telegram",
+    "bot",
+    "webcam"
   ],
-  "scripts": { "start": "node server.js" },
+  "scripts": {
+    "start": "node server.js"
+  },
   "author": {
     "name": "ilbonte",
     "email": "",
-    "url": ""
+    "url": "https://github.com/ilbonte"
   },
-  "homepage": "",
+  "homepage": "https://github.com/ilbonte/WMUBot",
   "repository": {
     "type": "git",
     "url": "https://github.com/ilbonte/WMUBot"
-  },
-  "engines": {
-    "node": ">= 0.6.0",
-    "npm": ">= 1.0.0"
   },
   "dependencies": {
     "express": "~3.4.4",
@@ -28,7 +29,5 @@
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.14"
   },
-  "bundleDependencies": [],
-  "private": true,
   "main": "server.js"
 }
