@@ -53,9 +53,9 @@ function sendWebcam(bot, chatId, location, force) {
                     bot.sendMessage(chatId, 'Error, please report to @ilbonte');
                 } else {
                     if (res.statusCode !== 200) {
-                        bot.sendMessage(chatId, 'Webcam not available. Check here: http://www.operauni.tn.it/servizi/ristorazione/webcam');
+                        bot.sendMessage(chatId, 'Webcam may not be available. ¯\\_(ツ)_/¯ \nCheck yourself here: http://www.operauni.tn.it/servizi/ristorazione/webcam');
                     } else {
-                        bot.sendPhoto(chatId, body);
+                        bot.sendPhoto(chatId, cam.url,);
                     }
                 }
             });
