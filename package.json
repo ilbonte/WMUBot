@@ -22,10 +22,8 @@
     "url": "https://github.com/ilbonte/WMUBot"
   },
   "dependencies": {
-    "express": "~3.4.4",
-    "node-telegram-bot-api": "^0.21.1"
-  },
-  "devDependencies": {
+    "express": "^4.16.3",
+    "node-telegram-bot-api": "^0.30.0",
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.14"
   },
